@@ -53,3 +53,25 @@ Join our community of developers creating universal apps.
 # AfriHustle
 Gig marketplace app
 >>>>>>> 363bf3d5973b8885a2ff17811f97d0d7b0814fef
+
+
+
+# AfriHustle Mobile App
+
+A modern African job/gig marketplace, built in React Native with Expo and NativeWind, fully following our Figma design.
+
+## Features
+
+- **Onboarding & Authentication:** Splash, Onboarding, Sign Up, Log In, Role Selection
+- **Profile Completion:** Personal Info, Skills, Work Experience, Education, Company Profile
+- **Main App:** Home (dashboard), Search, Job Details, Apply, Applications (with tabs), Notifications, Profile
+- **Responsive UI:** Styled with NativeWind (Tailwind CSS for React Native)
+- **Navigation:** Expo Router v2 structure with tab navigation
+- **Ready for Integration:** All screens are “plug-and-play” for your backend API/auth/data logic
+
+## Getting Started
+
+1. **Clone the repo:**
+   ```sh
+   git clone https://github.com/<your-org>/afrihustle.git
+   cd afrihustle
