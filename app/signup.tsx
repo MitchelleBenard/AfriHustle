@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
-import { Pressable, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Pressable, SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function SignUpScreen() {
   const router = useRouter();
@@ -22,105 +22,251 @@ export default function SignUpScreen() {
   };
 
   return (
-    <View className="flex-1 bg-white px-6 pt-20">
-      {/* Branding */}
-      <Text className="text-3xl font-semibold text-center">AfriHustle</Text>
-      <Text className="text-[#00B9A0] text-center text-base font-medium mb-7">Create your account</Text>
-
-      {/* Username */}
-      <TextInput
-        className="border border-gray-300 rounded-xl px-4 py-3 mb-4"
-        placeholder="Username"
-        value={username}
-        onChangeText={setUsername}
-        autoCapitalize="none"
-      />
-
-      {/* Email */}
-      <TextInput
-        className="border border-gray-300 rounded-xl px-4 py-3 mb-4"
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        autoCapitalize="none"
-        keyboardType="email-address"
-      />
-
-      {/* Password */}
-      <View className="relative mb-4">
-        <TextInput
-          className="border border-gray-300 rounded-xl px-4 py-3 pr-12"
-          placeholder="Password"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry={!showPassword}
-          autoCapitalize="none"
-        />
-        <Pressable
-          className="absolute right-4 top-4"
-          onPress={() => setShowPassword((v) => !v)}
-        >
-          <Ionicons
-            name={showPassword ? 'eye' : 'eye-off'}
-            size={22}
-            color="#666"
-          />
-        </Pressable>
-      </View>
-
-      {/* Terms Checkbox */}
-      <TouchableOpacity
-        className="flex-row items-center mb-5"
-        onPress={() => setAgree((v) => !v)}
-        activeOpacity={0.7}
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+      <ScrollView
+        style={{ flex: 1, backgroundColor: '#fff', paddingHorizontal: 24 }}
+        contentContainerStyle={{ paddingVertical: 32 }}
+        keyboardShouldPersistTaps="handled"
       >
-        <View
-          className={`w-5 h-5 border-2 rounded mr-2 ${
-            agree ? 'bg-[#00B9A0] border-[#00B9A0]' : 'border-gray-400 bg-white'
-          } items-center justify-center`}
-        >
-          {agree && <Ionicons name="checkmark" size={16} color="white" />}
+        {/* Branding */}
+        <View style={{ marginBottom: 32 }}>
+          <Text style={{
+            fontSize: 32,
+            fontWeight: 'bold',
+            color: '#222',
+            textAlign: 'center',
+            letterSpacing: 0.5,
+          }}>
+            AfriHustle
+          </Text>
+          <Text style={{
+            color: '#00B9A0',
+            textAlign: 'center',
+            fontSize: 18,
+            fontWeight: '600',
+            marginTop: 8,
+          }}>
+            Create your account
+          </Text>
         </View>
-        <Text className="text-sm">I agree to the terms and conditions</Text>
-      </TouchableOpacity>
 
-      {/* Sign Up Button */}
-      <TouchableOpacity
-        className={`rounded-full py-3 mb-4 ${canSignUp ? 'bg-[#00B9A0]' : 'bg-gray-300'}`}
-        onPress={handleSignUp}
-        disabled={!canSignUp}
-      >
-        <Text className="text-white text-lg font-bold text-center">Sign up</Text>
-      </TouchableOpacity>
+        {/* Input Fields */}
+        <View style={{ gap: 20 }}>
+          {/* Username */}
+          <View>
+            <Text style={{ fontSize: 14, fontWeight: '500', color: '#444', marginBottom: 6, marginLeft: 2 }}>
+              Username
+            </Text>
+            <TextInput
+              style={{
+                borderWidth: 2,
+                borderColor: '#e5e7eb',
+                borderRadius: 16,
+                paddingHorizontal: 16,
+                paddingVertical: 14,
+                fontSize: 16,
+                backgroundColor: '#fafafa',
+              }}
+              placeholder="Enter your username"
+              placeholderTextColor="#aaa"
+              value={username}
+              onChangeText={setUsername}
+              autoCapitalize="none"
+            />
+          </View>
+          {/* Email */}
+          <View>
+            <Text style={{ fontSize: 14, fontWeight: '500', color: '#444', marginBottom: 6, marginLeft: 2 }}>
+              Email
+            </Text>
+            <TextInput
+              style={{
+                borderWidth: 2,
+                borderColor: '#e5e7eb',
+                borderRadius: 16,
+                paddingHorizontal: 16,
+                paddingVertical: 14,
+                fontSize: 16,
+                backgroundColor: '#fafafa',
+              }}
+              placeholder="Enter your email"
+              placeholderTextColor="#aaa"
+              keyboardType="email-address"
+              value={email}
+              onChangeText={setEmail}
+              autoCapitalize="none"
+            />
+          </View>
+          {/* Password */}
+          <View>
+            <Text style={{ fontSize: 14, fontWeight: '500', color: '#444', marginBottom: 6, marginLeft: 2 }}>
+              Password
+            </Text>
+            <View style={{ position: 'relative' }}>
+              <TextInput
+                style={{
+                  borderWidth: 2,
+                  borderColor: '#e5e7eb',
+                  borderRadius: 16,
+                  paddingHorizontal: 16,
+                  paddingVertical: 14,
+                  fontSize: 16,
+                  backgroundColor: '#fafafa',
+                  paddingRight: 48,
+                }}
+                placeholder="Create a password"
+                placeholderTextColor="#aaa"
+                secureTextEntry={!showPassword}
+                value={password}
+                onChangeText={setPassword}
+                autoCapitalize="none"
+              />
+              <Pressable
+                style={{ position: 'absolute', right: 16, top: 14 }}
+                onPress={() => setShowPassword((v) => !v)}
+              >
+                <Ionicons
+                  name={showPassword ? 'eye' : 'eye-off'}
+                  size={24}
+                  color="#666"
+                />
+              </Pressable>
+            </View>
+          </View>
+        </View>
 
-      {/* Or divider */}
-      <View className="flex-row items-center my-2">
-        <View className="flex-1 h-px bg-gray-300" />
-        <Text className="mx-3 text-gray-400 font-medium">or</Text>
-        <View className="flex-1 h-px bg-gray-300" />
-      </View>
+        {/* Terms Checkbox */}
+        <TouchableOpacity
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: 24,
+            marginBottom: 8,
+          }}
+          activeOpacity={0.7}
+          onPress={() => setAgree((v) => !v)}
+        >
+          <View
+            style={{
+              width: 24,
+              height: 24,
+              borderWidth: 2,
+              borderColor: '#00B9A0',
+              borderRadius: 6,
+              marginRight: 12,
+              backgroundColor: agree ? '#00B9A0' : '#fff',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {agree && <Ionicons name="checkmark" size={18} color="white" />}
+          </View>
+          <Text style={{ fontSize: 14, color: '#444' }}>
+            I agree to the{' '}
+            <Text style={{ color: '#00B9A0', fontWeight: '600' }}>Terms</Text> and{' '}
+            <Text style={{ color: '#00B9A0', fontWeight: '600' }}>Privacy Policy</Text>
+          </Text>
+        </TouchableOpacity>
 
-      {/* Social logins */}
-      <View className="flex-row justify-center mb-5 mt-3 space-x-5">
-        <TouchableOpacity className="bg-white p-3 rounded-full border border-gray-200">
-          <Ionicons name="logo-google" size={22} color="#EA4335" />
+        {/* Sign Up Button */}
+        <TouchableOpacity
+          style={{
+            backgroundColor: canSignUp ? '#00B9A0' : '#e0e0e0',
+            borderRadius: 16,
+            paddingVertical: 16,
+            marginTop: 24,
+            marginBottom: 16,
+            shadowColor: '#00B9A0',
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: canSignUp ? 0.15 : 0,
+            shadowRadius: 8,
+            elevation: canSignUp ? 4 : 0,
+          }}
+          onPress={handleSignUp}
+          disabled={!canSignUp}
+        >
+          <Text style={{
+            color: '#fff',
+            fontSize: 18,
+            fontWeight: 'bold',
+            textAlign: 'center',
+            letterSpacing: 0.5,
+          }}>
+            Create Account
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity className="bg-white p-3 rounded-full border border-gray-200">
-          <Ionicons name="logo-facebook" size={22} color="#1877F3" />
-        </TouchableOpacity>
-        <TouchableOpacity className="bg-white p-3 rounded-full border border-gray-200">
-          <Ionicons name="logo-twitter" size={22} color="#1DA1F2" />
-        </TouchableOpacity>
-      </View>
 
-      {/* Login link */}
-      <View className="flex-row justify-center mt-2">
-        <Text className="text-gray-600">Already Have an account? </Text>
-        <TouchableOpacity onPress={() => router.replace('/login')}>
-          <Text className="text-[#00B9A0] font-semibold">Log in</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+        {/* Divider */}
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 24 }}>
+          <View style={{ flex: 1, height: 1, backgroundColor: '#e5e7eb' }} />
+          <Text style={{ marginHorizontal: 16, color: '#aaa', fontWeight: '500' }}>or continue with</Text>
+          <View style={{ flex: 1, height: 1, backgroundColor: '#e5e7eb' }} />
+        </View>
+
+        {/* Social logins */}
+        <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 16, marginBottom: 32 }}>
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#fff',
+              padding: 14,
+              borderRadius: 16,
+              borderWidth: 2,
+              borderColor: '#f3f4f6',
+              marginHorizontal: 4,
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 2 },
+              shadowOpacity: 0.05,
+              shadowRadius: 3,
+              elevation: 2,
+            }}
+          >
+            <Ionicons name="logo-google" size={24} color="#EA4335" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#fff',
+              padding: 14,
+              borderRadius: 16,
+              borderWidth: 2,
+              borderColor: '#f3f4f6',
+              marginHorizontal: 4,
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 2 },
+              shadowOpacity: 0.05,
+              shadowRadius: 3,
+              elevation: 2,
+            }}
+          >
+            <Ionicons name="logo-facebook" size={24} color="#1877F3" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#fff',
+              padding: 14,
+              borderRadius: 16,
+              borderWidth: 2,
+              borderColor: '#f3f4f6',
+              marginHorizontal: 4,
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 2 },
+              shadowOpacity: 0.05,
+              shadowRadius: 3,
+              elevation: 2,
+            }}
+          >
+            <Ionicons name="logo-twitter" size={24} color="#1DA1F2" />
+          </TouchableOpacity>
+        </View>
+
+        {/* Login link */}
+        <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 24 }}>
+          <Text style={{ color: '#444', fontSize: 16 }}>Already have an account? </Text>
+          <TouchableOpacity onPress={() => router.replace('/login')}>
+            <Text style={{ color: '#00B9A0', fontWeight: 'bold', fontSize: 16 }}>Log in</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 // This code defines a sign-up screen for an app called "AfriHustle".

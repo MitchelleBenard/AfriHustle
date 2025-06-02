@@ -23,32 +23,72 @@ export default function SkillsScreen() {
   const canContinue = skills.length > 0;
 
   return (
-    <ScrollView className="flex-1 bg-white px-6 pt-10" keyboardShouldPersistTaps="handled">
+    <ScrollView
+      style={{ flex: 1, backgroundColor: '#fff', paddingHorizontal: 24 }}
+      contentContainerStyle={{ paddingTop: 40, paddingBottom: 32 }}
+      keyboardShouldPersistTaps="handled"
+    >
       {/* Back arrow */}
-      <TouchableOpacity onPress={() => router.back()} className="mb-4">
+      <TouchableOpacity
+        onPress={() => router.back()}
+        style={{
+          marginBottom: 18,
+          alignSelf: 'flex-start',
+          backgroundColor: '#e6f7f5',
+          borderRadius: 100,
+          padding: 8,
+        }}
+      >
         <Ionicons name="arrow-back" size={28} color="#00B9A0" />
       </TouchableOpacity>
 
       {/* Progress bar */}
-      <View className="flex-row items-center mb-7">
-        <View className="flex-1 h-1 bg-[#00B9A0] rounded-full" />
-        <View className="flex-1 h-1 bg-[#00B9A0] rounded-full ml-2" />
-        <View className="flex-1 h-1 bg-gray-200 rounded-full ml-2" />
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 28 }}>
+        <View style={{ flex: 1, height: 5, backgroundColor: '#00B9A0', borderRadius: 8 }} />
+        <View style={{ flex: 1, height: 5, backgroundColor: '#00B9A0', borderRadius: 8, marginLeft: 8 }} />
+        <View style={{ flex: 1, height: 5, backgroundColor: '#e5e7eb', borderRadius: 8, marginLeft: 8 }} />
       </View>
 
       {/* Skills Icon */}
-      <View className="items-center mb-7">
+      <View style={{ alignItems: 'center', marginBottom: 24 }}>
         <Ionicons name="build-outline" size={80} color="#00B9A0" />
       </View>
 
       {/* Screen Title */}
-      <Text className="text-xl font-bold text-center mb-6">Your Skills</Text>
+      <Text style={{
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 8,
+        color: '#222',
+        letterSpacing: 0.2,
+      }}>
+        Your Skills
+      </Text>
+      <Text style={{
+        fontSize: 15,
+        color: '#666',
+        textAlign: 'center',
+        marginBottom: 24,
+      }}>
+        Add your top skills. You can add more later.
+      </Text>
 
       {/* Skills Input */}
-      <View className="flex-row items-center mb-4">
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 18 }}>
         <TextInput
-          className="flex-1 border border-gray-300 rounded-xl px-4 py-3"
+          style={{
+            flex: 1,
+            borderWidth: 2,
+            borderColor: '#e5e7eb',
+            borderRadius: 14,
+            paddingHorizontal: 16,
+            paddingVertical: 13,
+            fontSize: 16,
+            backgroundColor: '#fafafa',
+          }}
           placeholder="Add a skill"
+          placeholderTextColor="#aaa"
           value={skill}
           onChangeText={setSkill}
           autoCapitalize="words"
@@ -57,20 +97,40 @@ export default function SkillsScreen() {
         />
         <TouchableOpacity
           onPress={addSkill}
-          className="ml-2 bg-[#00B9A0] rounded-full p-3"
+          style={{
+            marginLeft: 10,
+            backgroundColor: '#00B9A0',
+            borderRadius: 100,
+            padding: 12,
+            shadowColor: '#00B9A0',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.12,
+            shadowRadius: 4,
+            elevation: 2,
+          }}
+          activeOpacity={0.85}
         >
           <Ionicons name="add" size={22} color="white" />
         </TouchableOpacity>
       </View>
 
       {/* Skills List */}
-      <View className="flex-row flex-wrap">
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginBottom: 8 }}>
         {skills.map((item, idx) => (
           <View
             key={idx}
-            className="flex-row items-center px-3 py-1 bg-[#e6f7f5] rounded-full mr-2 mb-2"
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              paddingHorizontal: 14,
+              paddingVertical: 7,
+              backgroundColor: '#e6f7f5',
+              borderRadius: 999,
+              marginRight: 8,
+              marginBottom: 8,
+            }}
           >
-            <Text className="mr-2 text-[#00B9A0]">{item}</Text>
+            <Text style={{ marginRight: 6, color: '#00B9A0', fontWeight: '500' }}>{item}</Text>
             <TouchableOpacity onPress={() => removeSkill(idx)}>
               <Ionicons name="close-circle" size={18} color="#00B9A0" />
             </TouchableOpacity>
@@ -80,11 +140,30 @@ export default function SkillsScreen() {
 
       {/* Continue Button */}
       <TouchableOpacity
-        className={`rounded-full py-3 mt-10 ${canContinue ? 'bg-[#00B9A0]' : 'bg-gray-300'}`}
+        style={{
+          borderRadius: 24,
+          paddingVertical: 16,
+          marginTop: 32,
+          backgroundColor: canContinue ? '#00B9A0' : '#e0e0e0',
+          shadowColor: '#00B9A0',
+          shadowOffset: { width: 0, height: 4 },
+          shadowOpacity: canContinue ? 0.15 : 0,
+          shadowRadius: 8,
+          elevation: canContinue ? 4 : 0,
+        }}
         onPress={() => router.replace('/profile/work-experience')}
         disabled={!canContinue}
+        activeOpacity={canContinue ? 0.85 : 1}
       >
-        <Text className="text-white text-lg font-bold text-center">Continue</Text>
+        <Text style={{
+          color: '#fff',
+          fontSize: 18,
+          fontWeight: 'bold',
+          textAlign: 'center',
+          letterSpacing: 0.5,
+        }}>
+          Continue
+        </Text>
       </TouchableOpacity>
     </ScrollView>
   );
