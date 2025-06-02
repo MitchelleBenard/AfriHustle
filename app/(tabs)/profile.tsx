@@ -4,9 +4,9 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 // Example data — replace with real user info
 const user = {
-  name: 'Alice Wambui',
+  name: 'Jinesh Patesh',
   title: 'Software Developer',
-  avatar: require('../../assets/images/profile-avatar.png'), // Use your avatar
+  avatar: require('../../assets/images/jinesh.jpg'), // Use your avatar
   verified: true,
   experience: [
     {
@@ -15,7 +15,7 @@ const user = {
       company: 'Microify',
       location: 'Cairo, Egypt',
       dates: 'Dec 20 – Feb 21',
-      logo: require('../../assets/images/microify-logo.png'),
+      logo: require('../../assets/images/microfy-logo.jpg'),
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ const user = {
       company: 'Unity',
       location: 'Giza, Egypt',
       dates: 'Feb 5 – July 4',
-      logo: require('../../assets/images/unity-logo.png'),
+      logo: require('../../assets/images/unity-logo.jpg'),
     },
   ],
   education: [
@@ -33,7 +33,7 @@ const user = {
       level: 'Bachelor | Delta',
       location: 'Egypt',
       dates: '2017 – 2020',
-      logo: require('../../assets/images/education-logo.png'),
+      logo: require('../../assets/images/education-logo.jpg'),
     },
   ],
 };

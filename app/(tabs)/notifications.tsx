@@ -5,14 +5,14 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 const activity = [
   {
     id: 1,
-    logo: require('../../assets/images/spotify-logo.png'), // Update with your icons
+    logo: require('../../assets/images/spotify-logo.jpg'), // Update with your icons
     text: "Spotify wants to take a final interview of you where head of HR will see you!",
     time: "12 min ago",
     unread: true,
   },
   {
     id: 2,
-    logo: require('../../assets/images/kalep-logo.png'),
+    logo: require('../../assets/images/kalep-logo.jpg'),
     text: "Kalep wants to contact with you in 24 hours with proper preparation",
     time: "47 min ago",
     unread: true,
@@ -22,14 +22,14 @@ const activity = [
 const applications = [
   {
     id: 3,
-    logo: require('../../assets/images/pinterest-logo.png'),
+    logo: require('../../assets/images/pinterest.jpg'),
     text: "Your application is submitted successfully to Pinterest. You can check the status here.",
     time: "1 hr ago",
     unread: false,
   },
   {
     id: 4,
-    logo: require('../../assets/images/safaricom-logo.png'),
+    logo: require('../../assets/images/safaricom-logo.jpg'),
     text: "Safaricom is reviewing your application, cover letter and portfolio. All the best!",
     time: "3 hrs ago",
     unread: false,
@@ -39,7 +39,7 @@ const applications = [
 const messages = [
   {
     id: 5,
-    avatar: require('../../assets/images/mike-avatar.png'),
+    avatar: require('../../assets/images/mike-avatar.jpg'),
     name: "Mike Miller",
     text: "We are looking for a web develo...",
     time: "11:45 am",
@@ -47,7 +47,7 @@ const messages = [
   },
   {
     id: 6,
-    avatar: require('../../assets/images/catherine-avatar.png'),
+    avatar: require('../../assets/images/catherine-avatar.jpg'),
     name: "Catherine Akoth",
     text: "Are you available for an interview ...",
     time: "11:45 am",

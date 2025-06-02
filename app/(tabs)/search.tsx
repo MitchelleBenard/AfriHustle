@@ -18,7 +18,7 @@ const sampleJobs = [
     company: 'lorem',
     location: 'Kampala, Uganda',
     salary: '$14000/m',
-    logo: require('../../assets/images/company1-logo.png'), // Add your own image
+    logo: require('../../assets/images/kalep-logo.jpg'), // Add your own image
   },
   {
     id: '3',

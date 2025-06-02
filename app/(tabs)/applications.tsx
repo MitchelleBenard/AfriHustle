@@ -26,7 +26,7 @@ const sampleApplications: ApplicationsData = {
       company: 'lorem',
       salary: '$14000/m',
       location: 'Kampala, Uganda',
-      logo: require('../../assets/images/company1-logo.png'),
+      logo: require('../../assets/images/kalep-logo.jpg'),
     },
     {
       id: '2',
@@ -34,7 +34,7 @@ const sampleApplications: ApplicationsData = {
       company: 'Carter',
       salary: '$5000/m',
       location: 'Kigali, Rwanda',
-      logo: require('../../assets/images/carter-logo.png'),
+      logo: require('../../assets/images/carter-logo.jpg'),
     },
     {
       id: '3',
@@ -42,7 +42,7 @@ const sampleApplications: ApplicationsData = {
       company: 'Google',
       salary: '$30000/m',
       location: 'Los Angeles, US',
-      logo: require('../../assets/images/google-logo.png'),
+      logo: require('../../assets/images/google-logo.jpg'),
     },
     {
       id: '4',
@@ -50,7 +50,7 @@ const sampleApplications: ApplicationsData = {
       company: 'Spotify',
       salary: '$35000/m',
       location: 'CapeTown, S.A',
-      logo: require('../../assets/images/spotify-logo.png'),
+      logo: require('../../assets/images/spotify-logo.jpg'),
     },
   ],
   Received: [],

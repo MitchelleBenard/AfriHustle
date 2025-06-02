@@ -9,14 +9,14 @@ const recentJobs = [
     title: 'UI/UX Designer',
     company: 'Pinterest',
     salary: '$10000/m',
-    logo: require('../../assets/images/pinterest-logo.png'), // Add your own image
+    logo: require('../../assets/images/pinterest.jpg'), // Add your own image
   },
   {
     id: '2',
     title: 'Software Developer',
     company: 'Spotify',
     salary: '$30000/m',
-    logo: require('../../assets/images/spotify-logo.png'), // Add your own image
+    logo: require('../../assets/images/spotify-logo.jpg'), // Add your own image
   },
 ];
 
@@ -37,7 +37,7 @@ const popularJobs = [
     salary: '$5000/m',
     location: 'Kigali, Rwanda',
     type: 'Part-Time',
-    logo: require('../../assets/images/carter-logo.png'), // Add your own image
+    logo: require('../../assets/images/carter-logo.jpg'), // Add your own image
   },
 ];
 
