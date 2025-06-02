@@ -1,13 +1,14 @@
-import { Ionicons } from '@expo/vector-icons';
+import { Entypo, Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+
 
 // Example job data (replace with actual passed data)
 const job = {
   title: 'Software Developer',
   company: 'Spotify',
-  logo: require('../../assets/images/spotify-logo.png'), // Update path for your logo
+  logo: require('../../assets/images/spotify-logo.jpg'), // Update path for your logo
   location: 'CapeTown, S.A',
   salary: '$30k/m',
 };
@@ -39,7 +40,8 @@ export default function ApplyScreen() {
       <View className="flex-row items-center justify-between mb-4">
         <View className="flex-row items-center">
           <View className="bg-white p-2 rounded-xl mr-3">
-            <Ionicons name="logo-spotify" size={36} color="#1DB954" />
+            <Entypo name="spotify-with-circle" size={36} color="#1DB954" />
+
           </View>
           <View>
             <Text className="font-bold text-base">{job.title}</Text>

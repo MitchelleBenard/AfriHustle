@@ -6,7 +6,7 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 const job = {
   title: 'UI/UX Designer',
   company: 'Pinterest',
-  logo: require('../../assets/images/pinterest-logo.png'), // Add your own image
+  logo: require('../../assets/images/pinterest.jpg'), // Add your own image
   location: 'Nairobi, Kenya',
   salary: '$10000/m',
   type: 'Full-Time',
