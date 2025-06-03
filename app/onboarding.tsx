@@ -111,7 +111,7 @@ export default function OnboardingScreen() {
 
                 {/* Next/Get Started Button */}
                 <TouchableOpacity
-                  onPress={() => idx === slides.length - 1 ? router.replace('/role') : null}
+                  onPress={() => idx === slides.length - 1 ? router.replace('/signup') : null}
                   className="flex-1 py-4 rounded-full bg-[#10B981] max-w-[160px]"
                   style={{
                     shadowColor: '#000',

@@ -215,7 +215,7 @@ export default function WorkExperienceScreen() {
           shadowRadius: 8,
           elevation: canContinue ? 4 : 0,
         }}
-        onPress={() => router.replace('/(tabs)')}
+        onPress={() => router.replace('/(tabs)/home')}
         disabled={!canContinue}
         activeOpacity={canContinue ? 0.85 : 1}
       >
